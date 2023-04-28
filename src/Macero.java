@@ -6,7 +6,7 @@
 public interface Macero {
     int convertToASCII(char character);
 
-    StringBuilder encode();
+    String encode();
 
     String decode(String cryptogram, int key);
 

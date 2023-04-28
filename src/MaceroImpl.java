@@ -24,14 +24,14 @@ public class MaceroImpl implements Macero {
     }
 
     @Override
-    public StringBuilder encode() {
+    public String encode() {
         for (int i = 0; i < toEncode.length(); i++) {
             int ascii = convertToASCII(toEncode.charAt(i));
             float encoded = (float) (Math.log10(ascii) / Math.log10(key)); /*Logarithm operation. Base = key and Argument = ascii code*/
             float shortenedNumber = Math.round(encoded * 1000f) / 1000f; /*Picking 3 decimals*/
             stringBuilder.append(shortenedNumber).append(" "); /*Building the solution*/
         }
-        return stringBuilder;
+        return stringBuilder.toString();
     }
 
     @Override
@@ -41,6 +41,6 @@ public class MaceroImpl implements Macero {
 
     @Override
     public char ASCIIToCharacter(int code) {
-        return 0;
+        return (char) code;
     }
 }
