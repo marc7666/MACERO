@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @project: MACERO
  * @date: 27/04/2023
  */
-public class encodeTests {
+public class UpperCaseEncodeTests {
     @Test
     void upperCaseTest1() {
         MaceroImpl test1 = new MaceroImpl("MARC", 3);
