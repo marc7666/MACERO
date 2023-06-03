@@ -31,7 +31,9 @@ public class MaceroImpl implements Macero {
             float shortenedNumber = Math.round(encoded * 1000f) / 1000f; /*Picking 3 decimals*/
             stringBuilder.append(shortenedNumber).append(" "); /*Building the solution*/
         }
-        return stringBuilder.toString();
+        cryptogram = stringBuilder.toString();
+        stringBuilder.delete(0, stringBuilder.length());
+        return cryptogram;
     }
 
     @Override
