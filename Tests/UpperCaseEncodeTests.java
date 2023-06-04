@@ -2,11 +2,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * @author: Marc Cervera Rosell
- * @project: MACERO
- * @date: 27/04/2023
- */
 public class UpperCaseEncodeTests {
     @Test
     void upperCaseTest1() {
