@@ -39,7 +39,7 @@ public class MaceroImpl implements Macero {
     }
 
     @Override
-    public String decode(String cryptogram, int key) {
+    public String decode(String cryptogram) {
         emptyStringBuilder();
         StringTokenizer str = new StringTokenizer(cryptogram, " ");
         while (str.hasMoreTokens()){
