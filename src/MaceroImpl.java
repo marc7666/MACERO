@@ -1,3 +1,5 @@
+import java.util.StringTokenizer;
+
 /**
  * @author: Marc Cervera Rosell
  * @project: MACERO
@@ -32,13 +34,30 @@ public class MaceroImpl implements Macero {
             stringBuilder.append(shortenedNumber).append(" "); /*Building the solution*/
         }
         cryptogram = stringBuilder.toString();
-        stringBuilder.delete(0, stringBuilder.length());
+        emptyStringBuilder();
         return cryptogram;
     }
 
     @Override
-    public String decode(String cryptogram, int key) {
-        return null;
+    public String decode(String cryptogram) {
+        emptyStringBuilder();
+        StringTokenizer str = new StringTokenizer(cryptogram, " ");
+        while (str.hasMoreTokens()){
+            Double value = Double.parseDouble(str.nextToken());
+            double asciiWithDecimals = Math.pow(key, value);
+            int asciiWithNoDecimals = (int) Math.round(asciiWithDecimals);
+            char character = ASCIIToCharacter(asciiWithNoDecimals);
+            stringBuilder.append(character);
+        }
+        decodedCryptogram = stringBuilder.toString();
+        emptyStringBuilder();
+        return decodedCryptogram;
+    }
+
+    private void emptyStringBuilder() {
+        if (!stringBuilder.isEmpty()) {
+            stringBuilder.delete(0, stringBuilder.length());
+        }
     }
 
     @Override

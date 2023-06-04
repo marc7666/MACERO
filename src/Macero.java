@@ -8,7 +8,7 @@ public interface Macero {
 
     String encode();
 
-    String decode(String cryptogram, int key);
+    String decode(String cryptogram);
 
     char ASCIIToCharacter(int code);
 
